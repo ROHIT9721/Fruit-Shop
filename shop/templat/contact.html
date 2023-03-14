@@ -1,0 +1,23 @@
+{% extends 'forms.html' %}
+{% block form %}
+<form action="" method="POST">
+  {% csrf_token %}
+      {% for fm in form %}
+      <div>
+          {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}<br>
+      
+        {% endfor %}
+      </div>
+
+    <div class="mt-5">
+      <button type="submit">
+        send
+      </button>
+    </div>
+  {% if messages %}
+  {% for msg in messages %}
+   {% if msg.tag %} class="{{msg.tag}}"{% endif %}{{msg}}
+   {% endfor %} {% endif %}
+</form>
+
+{% endblock form %}

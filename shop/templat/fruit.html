@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block blockname %}
+ <!-- fruits section -->
+ <section class="fruit_section layout_padding-top">
+    <div class="container">
+      <h2 class="custom_heading">Fresh Fruits</h2>
+      <p class="custom_heading-text">
+        There are many variations of passages of Lorem Ipsum available, but
+        the majority have
+      </p>
+      {% for x in n %}
+      <div class="row layout_padding2">
+        <div class="col-md-8">
+          <div class="fruit_detail-box">
+           <h3>
+            {{x.name}}
+            </h3>
+            <p class="mt-4 mb-5">
+             {{x.about}}
+             {{x.title}}
+            </p>
+            <div>
+              <a href="" class="custom_dark-btn">
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div> {% endfor %}
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <div class="fruit_img-box d-flex justify-content-center align-items-center">
+            <img src="static/images/orange.png" alt="" class="" width="250px" />
+          </div>
+        </div>
+      </div>
+  <!-- end fruits section -->
+
+{% endblock blockname %}
